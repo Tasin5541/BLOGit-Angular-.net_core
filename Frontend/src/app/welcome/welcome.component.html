@@ -1,0 +1,22 @@
+<div class="welcomeBg" style="background-image: url(assets/images/flipbg.jpg)" >
+  <div class="container h-90">
+      <div class="row align-items-center h-100">
+          <div class="col-lg-5">
+              <h1 *ngIf="!loggedin()" class="page-header-title">Bring out Your Inner Writer</h1>
+              <p *ngIf="!loggedin()" class="page-header-text welcomeText mb-5">Welcome to BLOGit, a website for hosting your beautiful contents. So what are you waiting for?</p>
+              <a *ngIf="!loggedin()" class="btn btn-teal btn-reg rounded-pill lift lift-sm" routerLink="/register">
+                Get Started
+                <svg class="svg-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
+              </a>
+              <p *ngIf="!loggedin()" class="pl-3 mt-3">already have an account? <a routerLink="/login">Log in</a></p>
+
+              <h1 *ngIf="loggedin()" class="page-header-title">Hello, {{loggedinUser}}!</h1>
+              <p *ngIf="loggedin()" class="page-header-text mb-5">Welcome to BLOGit, a website for hosting your beautiful contents. So what are you waiting for?</p>
+              <a *ngIf="loggedin()" class="btn btn-teal btn-reg rounded-pill lift lift-sm" routerLink="/newBlog">
+                Write a Blog
+                <svg class="svg-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>

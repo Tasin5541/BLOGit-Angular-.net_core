@@ -1,0 +1,73 @@
+<div class="card-body">
+  <div class="table-responsive">
+
+    <div class="input-group">
+      <input type="text" [(ngModel)]="searchInput" class="search form-control" placeholder="Search user">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" (click)="search()" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <button (click)="refreshSearch()" class="btn btn-info ml-auto">
+        Cancel Search
+      </button>
+    </div>
+
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+              <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Ban Status</th>
+                <th>Admin Status</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Ban Status</th>
+                <th>Admin Status</th>
+              </tr>
+          </tfoot>
+          <tbody>
+
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                  <div class="d-flex">
+                    {{user.ban}}
+                    <button (click)="banFunc(user.id)" class="ml-auto btn btn-danger">
+                      <span *ngIf="user.ban===false">
+                        Ban
+                      </span>
+                      <span *ngIf="user.ban===true">
+                        Unban
+                      </span>
+                    </button>
+                  </div>
+                </td>
+                <td>
+                  <div class="d-flex">
+                    {{user.admin}}
+                    <button (click)="adminFunc(user.id)" class="ml-auto btn btn-success">
+                      <span *ngIf="user.admin===false">
+                        Admin
+                      </span>
+                      <span *ngIf="user.admin===true">
+                        Remove
+                      </span>
+                    </button>
+                  </div>
+                </td>
+            </tr>
+
+          </tbody>
+      </table>
+
+  </div>
+</div>

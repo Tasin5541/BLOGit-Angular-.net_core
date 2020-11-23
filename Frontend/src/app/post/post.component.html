@@ -1,0 +1,63 @@
+<div class="container-fluid pr-0 pl-0 postBannerDiv" id="wrapper">
+  <img class="postBanner" src="http://localhost:53744/Image/{{post.banner_Image}}">
+</div>
+<div class="container homePost">
+  <div class="card-body row">
+      <div class="card postCard w-100">
+          <h2 *ngIf="isEdit===false" class="postCardTitle text-capitalize">{{post.title}}</h2>
+          <div *ngIf="(loggedin()===post.author || isAdmin()==='true') && isEdit===false" class="option d-flex align-items-center">
+            <button (click)="edit()" class="btn btn-outline-secondary btn-sm"><i class="fas fa-pen"></i></button>
+            <button (click)="deletePost(post.id)" class="btn btn-outline-secondary btn-sm"><i class="fas fa-trash"></i></button>
+          </div>
+          <p *ngIf="isEdit===false" class="card-text postCardText">{{post.description}}</p>
+          <div *ngIf="isEdit===true" class="form-group card-text w-100">
+            <input [(ngModel)]="newTitle" type="text" class="form-control editTitle w-100" placeholder="">
+            <textarea [(ngModel)]="newDescription" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="form-control editBody w-100">{{post.description}}</textarea>
+            <button (click)="updatePost(post.id)" type="submit" class="btn btn-success btn-block"> Update </button>
+            <button (click)="cancelUpdate()" class="btn btn-secondary btn-block"> Cancel </button>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="#" class="">
+                  <img class="aAvatar rounded-circle z-depth-0" src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png" alt="avatar image">
+              </a>
+              <span class="aName font-weight-bold">
+                {{post.author}}
+              </span>
+              <span class="aDate text-secondary">
+                {{post.postedOn}}
+              </span>
+
+          </div>
+
+      </div>
+  </div>
+  <hr class="style7">
+  <br>
+  <div class="commentSection">
+      <h4 class="mb-4">Comments</h4>
+      <div *ngIf="loggedin()">
+        <form (ngSubmit)="onSubmit()" [formGroup]="addCommentForm">
+          <div class="comment-container">
+            <div class="meta">
+              <img src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png" alt="" class="avatar">
+              <span class="name">{{currentUser}}</span>
+            </div>
+            <textarea class="form-control" formControlName="CommentBody"></textarea>
+            <span class="placeholder">write a response</span>
+
+            <div class="btns form-group">
+              <button [disabled]="addCommentForm.invalid" type="submit" class="btn btn-success">publish</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="mb-4">
+        <small *ngIf="!loggedin()">*<a routerLink="/login">Login</a> to comment</small>
+      </div>
+
+      <div *ngFor="let comment of comments">
+        <app-comment-card [comment]="comment"></app-comment-card>
+      </div>
+  </div>
+</div>

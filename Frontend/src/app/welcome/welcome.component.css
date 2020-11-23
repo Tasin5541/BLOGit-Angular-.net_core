@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
+.welcomeBg {
+  height: 100vh;
+  background-repeat: no-repeat;
+background-size: cover;
+}
+
+.welcomeText{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 400;
+}
+
+.h-90{
+height:90%;
+}
+
+.h-100{
+height:100%;
+}
+
+.page-header-title{
+font-size: 3.5rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #687281;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.35rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+
+.btn-teal {
+  color: #fff;
+  background-color: #00ba94;
+  border-color: #00ba94;
+}
+
+.btn-reg {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+}
+
+.lift {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+  -webkit-transition: box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+
+.lift-sm {
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(31, 45, 65, 0.2);
+}
+
+.svg-right {
+  width: 0.875em;
+  margin-left: 0.25rem !important;
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}

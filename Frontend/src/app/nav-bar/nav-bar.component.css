@@ -1,0 +1,13 @@
+.dropdown-toggle img{
+	max-height: 25px;
+}
+
+.pad{
+  padding: 0.5rem 4rem;
+}
+
+@media (max-width: 768px){
+	.pad{
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,42 @@
+.homePostCard{
+	border: none;
+}
+
+.homePostCardTitle{
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 28px;
+  font-size: 25px;
+}
+
+.homePostCardText{
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  color: rgba(117, 117, 117, 1);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.aAvatar{
+	max-height: 30px;
+	margin-right: 1rem;
+}
+
+.aName{
+	margin-right: 1rem;
+}
+
+.homePostImage{
+	object-fit:contain;
+  max-height:10rem;
+}
+
+@media (max-width: 768px){
+	.postCardTitle{
+    font-size: 2.5rem;
+  }
+}

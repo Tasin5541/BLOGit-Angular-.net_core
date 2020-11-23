@@ -1,0 +1,26 @@
+.comment{
+	border: none;
+	margin-bottom: 2rem;
+}
+
+.commentBody{
+  white-space: pre-wrap;
+}
+
+.commentMenu{
+	margin-top: -2rem!important;
+}
+
+.cDate{
+  font-size: 12px;
+  margin-bottom: 0.5rem!important;
+}
+
+.aAvatar{
+	max-height: 30px;
+	margin-right: 1rem;
+}
+
+.size {
+  width: 50%;
+}

@@ -1,0 +1,28 @@
+.dropdown-toggle img{
+	max-height: 25px;
+}
+
+.homePostCard{
+	border: none;
+}
+
+.homePostCardText{
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+}
+
+.aAvatar{
+	max-height: 30px;
+	margin-right: 1rem;
+}
+
+.aName{
+	margin-right: 1rem;
+}
+
+.homePostImage{
+	object-fit:contain;
+   	height:auto
+}

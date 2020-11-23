@@ -1,0 +1,21 @@
+<div class="card-body row">
+  <div class="col-sm-9">
+      <div class="card homePostCard">
+          <h2 class="homePostCardTitle text-capitalize">{{post.title}}</h2>
+          <p class="card-text homePostCardText">{{post.description}}</p>
+          <div class="d-flex align-items-center">
+              <a routerLink="/post/{{post.id}}" class="stretched-link">
+                <i class="fas fa-user-circle mr-1"></i>
+              </a>
+              <span class="aName font-weight-bold">
+                {{post.author}}
+              </span>
+          </div>
+          <span class="aDate">
+            {{post.postedOn}}
+          </span>
+      </div>
+  </div>
+  <img class="homePostImage col-sm-3" src="http://localhost:53744/Image/{{post.banner_Image}}">
+</div>
+<hr class="style7">

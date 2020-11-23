@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center signBody align-middle ">
+
+  <div class="card loginCard">
+    <header class="card-header">
+        <h4 class="card-title mt-2 text-center">Create Your Blog</h4>
+    </header>
+    <article class="card-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="addBlogForm">
+            <div class="form-group">
+                <!--<label class="font-weight-bold">Blog Title</label>-->
+                <input type="text" class="form-control editTitle" placeholder="Give your blog a title" formControlName="Title">
+                <span *ngIf="!Title.valid && (Title.touched)" class="error-block">
+                  Please provide a Title
+                </span>
+            </div>
+            <div class="form-group">
+                <!--<label class="font-weight-bold">Description</label>-->
+                <textarea class="form-control editBody" placeholder="Write your blog" formControlName="Description"></textarea>
+                <span *ngIf="!Description.valid && (Description.touched)" class="error-block">
+                  Please provide a Description
+                </span>
+            </div>
+            <div class="form-group">
+              <label class="font-weight-bold">Blog Banner</label>
+              <input type="file" (change)="onFileSelect($event)" class="form-control-file" id="exampleFormControlFile1" formControlName="Banner_Image">
+              <img class="imageUpload" [src]="imageUrl" />
+            </div>
+            <div class="form-group">
+                <button [disabled]="addBlogForm.invalid" type="submit" class="btn btn-success btn-block"> Save </button>
+            </div>
+            <div class="form-group">
+              <button type="reset" class="btn btn-secondary btn-block"> Cancel </button>
+            </div>
+        </form>
+    </article>
+  </div>
+</div>

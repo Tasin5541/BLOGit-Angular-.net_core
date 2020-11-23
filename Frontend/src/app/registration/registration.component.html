@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center signBody align-middle align-items-center">
+
+  <div class="card signCard">
+      <header class="card-header">
+          <h4 class="card-title mt-2 text-center">Create Your Account</h4>
+      </header>
+      <article class="card-body">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label class="font-weight-bold">Username </label>
+                  <input type="text" class="form-control" formControlName="userName">
+                  <span *ngIf="!userName.valid && (userName.touched || userSubmitted)" class="error-block">
+                    Please provide a username
+                  </span>
+              </div>
+              <div class="form-group">
+                  <label class="font-weight-bold">Email address</label>
+                  <input type="email" class="form-control" formControlName="email">
+                  <small *ngIf="!email.touched" class="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small>
+                  <span *ngIf="!email.valid && (email.touched || userSubmitted)" class="error-block">
+                    <span *ngIf="email.hasError('required')">
+                      Please provide an email
+                    </span>
+                    <span *ngIf="email.hasError('email')">
+                      Please provide valid email
+                    </span>
+                  </span>
+              </div>
+              <div class="form-group">
+                  <label class="font-weight-bold">Create password</label>
+                  <input class="form-control" type="password" formControlName="password">
+                  <small *ngIf="!password.touched" class="form-text text-muted">
+                    *minimum 8 charachters
+                  </small>
+                  <span *ngIf="!password.valid && (password.touched || userSubmitted)" class="error-block">
+                    <span *ngIf="password.errors['required']">
+                      Please provide a password
+                    </span>
+                    <span *ngIf="password.errors.minlength">
+                      Password should not be less than 8 characters
+                    </span>
+                  </span>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Confirm password</label>
+                <input class="form-control" type="password" formControlName="ConfirmPassword">
+                <span *ngIf="!ConfirmPassword.valid && (ConfirmPassword.touched || userSubmitted)" class="error-block">
+                  <span *ngIf="ConfirmPassword.hasError('required')">
+                    Please confirm password
+                  </span>
+                </span>
+                <span *ngIf="registrationForm.hasError('notmatched') && ConfirmPassword.valid"
+                class="error-block">
+                  Passwords do not match
+                </span>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-success btn-block"> Register </button>
+              </div>
+              <div class="form-group">
+                <button type="reset" class="btn btn-secondary btn-block"> Cancel </button>
+              </div>
+              <small class="text-justify">
+                Already have an account? <a routerLink="/login">Log In</a>
+              </small>
+          </form>
+      </article>
+  </div>
+</div>

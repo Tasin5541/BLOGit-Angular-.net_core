@@ -1,0 +1,31 @@
+body{
+	height: 100vh;
+}
+
+.root{
+	height: 100%;
+}
+
+.signBody{
+	height: 100vh;
+}
+
+.signCard{
+	width: 40%
+}
+
+.loginForm{
+	width: 70%;
+}
+
+@media (max-width: 1380px){
+	.signCard{
+		width: 60%
+	}
+}
+
+@media (max-width: 768px){
+	.signCard{
+		width: 90%
+	}
+}

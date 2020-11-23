@@ -1,0 +1,31 @@
+<div class="comment card">
+  <div class="d-flex">
+      <a class="">
+        <img class="aAvatar rounded-circle z-depth-0" src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png" alt="avatar image">
+      </a>
+      <div>
+          <div class="d-flex">
+              <div>
+                  <span class="cName font-weight-bold">
+                      {{comment.userName}}
+                  </span>
+                  <p class="cDate text-secondary">
+                      {{comment.commentedOn}}
+                  </p>
+              </div>
+              <div *ngIf="loggedin()===comment.userName || isAdmin()==='true'" class="test ml-auto dropdown dropleft" id="commentDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i type="button" class="fas fa-ellipsis-v text-secondary"></i>
+                  <div class="dropdown-menu dropdown-menu-right commentMenu" aria-labelledby="commentDropdownMenu">
+                      <a type="button" class="dropdown-item" (click)="edit()">Edit</a>
+                      <a type="button" class="dropdown-item" (click)="deleteComment(comment.id)">Delete</a>
+                  </div>
+              </div>
+          </div>
+          <div *ngIf="isEdit===false" class="commentBody card-text">{{comment.comment}}</div>
+          <div *ngIf="isEdit===true" class="commentBody form-group card-text">
+              <textarea [(ngModel)]="newComment" class="form-control">{{comment.comment}}</textarea>
+              <button (click)="updateComment(comment.id)" type="submit" class="btn btn-success btn-block"> Update </button>
+          </div>
+      </div>
+  </div>
+</div>
